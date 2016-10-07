@@ -1,7 +1,6 @@
 var React = require('react');
 var Clock = require('Clock');
 var Controls = require('Controls');
-var TimerStart = require('TimerStart');
 
 var Timer = React.createClass({
     getInitialState: function () {
@@ -47,18 +46,12 @@ var Timer = React.createClass({
     },
     render: function () {
         var {count, timerStatus} = this.state;
-        var renderControlArea = () => {
-            if (timerStatus !== 'stopped') {
-                return <Controls timerStatus={timerStatus} onStatusChange={this.handleStatusChange}/>
-            } else {
-                return <TimerStart onSetTimer={this.handleSetTimer}/>
-            }
-        };
+
         return (
             <div>
                 <h1 className="page-title">Timer App</h1>
                 <Clock totalSeconds={count}/>
-                {renderControlArea()}
+                <Controls timerStatus={timerStatus} onStatusChange={this.handleStatusChange}/>
             </div>
         );
     }
