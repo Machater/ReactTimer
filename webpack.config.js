@@ -31,6 +31,7 @@ new webpack.ProvidePlugin({
       Clock: 'app/components/Clock.jsx',
       CountdownForm: 'app/components/CountdownForm.jsx',
       Controls: 'app/components/Controls.jsx',
+      TimerStart: 'app/components/TimerStart.jsx',
 
     },
     extensions: ['', '.js', '.jsx']
